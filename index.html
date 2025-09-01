@@ -90,15 +90,15 @@
                         <div class="app-results">
                             <div class="impact-grid">
                                 <div class="impact-item">
-                                    <span class="impact-number">10K+</span>
+                                    <span class="impact-number" id="users-helped">10K+</span>
                                     <span class="impact-label">Users Helped</span>
                                 </div>
                                 <div class="impact-item">
-                                    <span class="impact-number">4.8★</span>
-                                    <span class="impact-label">App Store</span>
+                                    <span class="impact-number" id="app-rating">4.8★</span>
+                                    <span class="impact-label">App Store Rating</span>
                                 </div>
                                 <div class="impact-item">
-                                    <span class="impact-number">50K+</span>
+                                    <span class="impact-number" id="scans-processed">50K+</span>
                                     <span class="impact-label">Scans Processed</span>
                                 </div>
                             </div>
@@ -205,5 +205,38 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchAppStoreData();
+        });
+
+        async function fetchAppStoreData() {
+            const appId = '6747918779'; // VeggieLens App ID
+            const countryCode = 'jp'; // Japan App Store
+
+            try {
+                const response = await fetch(`https://itunes.apple.com/lookup?id=${appId}&country=${countryCode}`);
+                const data = await response.json();
+
+                if (data.results && data.results.length > 0) {
+                    const app = data.results[0];
+                    document.getElementById('app-rating').textContent = app.averageUserRating.toFixed(1) + '★';
+                    document.getElementById('users-helped').textContent = formatNumber(app.userRatingCount) + '+';
+                }
+            } catch (error) {
+                console.error('Error fetching App Store data:', error);
+            }
+        }
+
+        function formatNumber(num) {
+            if (num >= 1000000) {
+                return (num / 1000000).toFixed(1) + 'M';
+            }
+            if (num >= 1000) {
+                return (num / 1000).toFixed(0) + 'K';
+            }
+            return num;
+        }
+    </script>
 </body>
 </html>
