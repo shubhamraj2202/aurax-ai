@@ -176,5 +176,59 @@ function addSmoothScrolling() {
     });
 }
 
+function addCosmicTrail() {
+    let mouseX = 0;
+    let mouseY = 0;
+    let trail = [];
+    const maxTrail = 6;
+    
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+        // Add new trail point
+        trail.push({ x: mouseX, y: mouseY });
+        
+        // Limit trail length
+        if (trail.length > maxTrail) {
+            trail.shift();
+        }
+        
+        // Create trail dots
+        trail.forEach((point, index) => {
+            const dot = document.createElement('div');
+            const size = Math.max(3, 8 - index);
+            const opacity = (maxTrail - index) / maxTrail;
+            
+            dot.style.cssText = `
+                position: fixed;
+                left: ${point.x - size/2}px;
+                top: ${point.y - size/2}px;
+                width: ${size}px;
+                height: ${size}px;
+                background: rgba(139, 92, 246, ${opacity * 0.7});
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 9999;
+                transition: all 0.1s ease-out;
+            `;
+            
+            document.body.appendChild(dot);
+            
+            // Remove dot after short time
+            setTimeout(() => {
+                if (dot && dot.parentNode) {
+                    dot.parentNode.removeChild(dot);
+                }
+            }, 200);
+        });
+    });
+    
+    console.log('Cosmic trail initialized!'); // Debug log
+}
+
 // Ensure GSAP ScrollTrigger is registered
 gsap.registerPlugin(ScrollTrigger);
+
+// Initialize cosmic trail
+addCosmicTrail();
