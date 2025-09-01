@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 </head>
+
 <body>
     <div class="cosmic-background">
         <div class="stars"></div>
@@ -16,14 +18,13 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-brand">
-                <span class="brand-icon">🌱</span>
-                <span class="brand-text">VeggieLens</span>
+                <a href="veggieLens.html" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: inherit;">
+                    <span class="brand-icon">🌱</span>
+                    <span class="brand-text">VeggieLens</span>
+                </a>
             </div>
             <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="veggieLens-support.html">Support</a>
-                <a href="veggieLens-terms.html">Terms</a>
-                <a href="veggieLens-privacy.html">Privacy</a>
+                <a href="index.html">Meet Developer</a>
             </div>
         </div>
     </nav>
@@ -36,7 +37,8 @@
                     <h1 class="app-title">VeggieLens</h1>
                     <p class="app-tagline">AI-Powered Food Scanner: Point, Scan, Know.</p>
                     <div class="app-store-buttons">
-                        <a href="https://apps.apple.com/us/app/veggielens/id6747918779" target="_blank" class="btn btn-primary">
+                        <a href="https://apps.apple.com/us/app/veggielens/id6747918779" target="_blank"
+                            class="btn btn-primary">
                             <span>Download on App Store</span>
                         </a>
                     </div>
@@ -48,15 +50,15 @@
             <div class="container">
                 <div class="metrics-grid">
                     <div class="metric-item">
-                        <span class="metric-number" id="app-rating">4.8★</span>
+                        <span class="metric-number" id="app-rating">5.0★</span>
                         <span class="metric-label">App Store Rating</span>
                     </div>
                     <div class="metric-item">
-                        <span class="metric-number" id="users-helped">10K+</span>
+                        <span class="metric-number" id="users-helped">500+</span>
                         <span class="metric-label">Users Helped</span>
                     </div>
                     <div class="metric-item">
-                        <span class="metric-number" id="scans-processed">50K+</span>
+                        <span class="metric-number" id="scans-processed">3K+</span>
                         <span class="metric-label">Scans Processed</span>
                     </div>
                 </div>
@@ -82,11 +84,6 @@
                         <h3>Detailed Ingredient Analysis</h3>
                         <p>Get a breakdown of ingredients and their dietary status.</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📚</div>
-                        <h3>Comprehensive Database</h3>
-                        <p>Access a vast and growing database of food items and ingredients.</p>
-                    </div>
                 </div>
             </div>
         </section>
@@ -94,27 +91,16 @@
         <section class="app-about">
             <div class="container">
                 <h2 class="section-title">About VeggieLens</h2>
-                <p>VeggieLens is your ultimate companion for conscious eating. In a world where dietary choices are increasingly important, VeggieLens simplifies the process of identifying vegan and vegetarian foods. Built with cutting-edge artificial intelligence, it provides instant analysis, helping you make informed decisions effortlessly.</p>
-                <p>Our mission is to empower individuals to adhere to their dietary preferences with confidence and ease. Whether you're a seasoned vegan, a curious vegetarian, or simply exploring plant-based options, VeggieLens is designed to support your journey.</p>
+                <p>VeggieLens is your ultimate companion for conscious eating. In a world where dietary choices are
+                    increasingly important, VeggieLens simplifies the process of identifying vegan and vegetarian foods.
+                    Built with cutting-edge artificial intelligence, it provides instant analysis, helping you make
+                    informed decisions effortlessly.</p>
+                <p>Our mission is to empower individuals to adhere to their dietary preferences with confidence and
+                    ease. Whether you're a seasoned vegan, a curious vegetarian, or simply exploring plant-based
+                    options, VeggieLens is designed to support your journey.</p>
             </div>
         </section>
 
-        <!-- Testimonials Section -->
-        <section class="app-testimonials">
-            <div class="container">
-                <h2 class="section-title">What Users Are Saying</h2>
-                <div class="testimonials-grid">
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">"VeggieLens has changed my life! No more guessing about ingredients. It's fast, accurate, and incredibly easy to use."</p>
-                        <p class="testimonial-author">- Happy Vegan User</p>
-                    </div>
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">"As a new vegetarian, this app is a lifesaver. It helps me quickly check products and stay true to my diet without hassle."</p>
-                        <p class="testimonial-author">- Conscious Eater</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- Legal Links Section -->
         <section class="app-legal-links">
@@ -139,6 +125,7 @@
                 </div>
             </div>
         </section>
+
     </main>
 
     <footer class="footer">
@@ -147,6 +134,11 @@
                 <div class="footer-brand">
                     <span class="brand-icon">🌱</span>
                     <span>VeggieLens</span>
+                </div>
+                <div class="footer-links">
+                    <a href="veggieLens-support.html">Support</a>
+                    <a href="veggieLens-terms.html">Terms</a>
+                    <a href="veggieLens-privacy.html">Privacy</a>
                 </div>
                 <div class="footer-tagline">
                     <p>Empowering conscious eating with AI.</p>
@@ -157,7 +149,7 @@
 
     <script src="script.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             fetchAppStoreData();
         });
 
@@ -171,8 +163,7 @@
 
                 if (data.results && data.results.length > 0) {
                     const app = data.results[0];
-                    document.getElementById('app-rating').textContent = app.averageUserRating.toFixed(1) + '★';
-                    document.getElementById('users-helped').textContent = formatNumber(app.userRatingCount) + '+';
+                    // Keep static values - no live updates
                 }
             } catch (error) {
                 console.error('Error fetching App Store data:', error);
@@ -190,4 +181,5 @@
         }
     </script>
 </body>
+
 </html>

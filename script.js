@@ -100,56 +100,25 @@ function initHeroAnimations() {
 }
 
 function initScrollAnimations() {
-    // Animate sections on scroll
-    gsap.utils.toArray('section').forEach(section => {
-        gsap.from(section, {
-            opacity: 0,
-            y: 50,
+    // Select all sections and elements to animate
+    const elementsToAnimate = gsap.utils.toArray('section, .app-planet, .contact-card, .footer');
+
+    // Set initial state for all animated elements
+    gsap.set(elementsToAnimate, { opacity: 0, y: 50 });
+
+    // Animate sections and other elements to fade in
+    elementsToAnimate.forEach(element => {
+        gsap.to(element, {
+            opacity: 1,
+            y: 0,
             duration: 1,
             ease: 'power2.out',
-            scrollTrigger: {
-                trigger: section,
-                start: 'top 80%',
-                end: 'bottom 20%',
-                toggleActions: 'play none none reverse',
-                // markers: true // For debugging
-            }
+            // No ScrollTrigger here, just animate on load
         });
     });
 
-    // Animate skills constellation list items
-    gsap.utils.toArray('.skills-constellation li').forEach(item => {
-        gsap.from(item, {
-            opacity: 0,
-            scale: 0.8,
-            duration: 0.8,
-            ease: 'back.out(1.7)',
-            scrollTrigger: {
-                trigger: item,
-                start: 'top 90%',
-                toggleActions: 'play none none reverse',
-                // markers: true
-            }
-        });
-    });
-
-    // Animate app-planet cards
+    // Animate app-planet cards with subtle continuous orbital animation
     gsap.utils.toArray('.app-planet').forEach(planet => {
-        gsap.from(planet, {
-            opacity: 0,
-            y: 50,
-            rotation: gsap.utils.random(-10, 10),
-            duration: 1,
-            ease: 'power2.out',
-            scrollTrigger: {
-                trigger: planet,
-                start: 'top 85%',
-                toggleActions: 'play none none reverse',
-                // markers: true
-            }
-        });
-
-        // Add subtle continuous orbital animation
         gsap.to(planet, {
             y: '+=random(-5, 5)',
             x: '+=random(-5, 5)',
@@ -158,22 +127,6 @@ function initScrollAnimations() {
             ease: 'sine.inOut',
             repeat: -1,
             yoyo: true
-        });
-    });
-
-    // Animate contact cards
-    gsap.utils.toArray('.contact-card').forEach(card => {
-        gsap.from(card, {
-            opacity: 0,
-            scale: 0.9,
-            duration: 0.8,
-            ease: 'power2.out',
-            scrollTrigger: {
-                trigger: card,
-                start: 'top 90%',
-                toggleActions: 'play none none reverse',
-                // markers: true
-            }
         });
     });
 }

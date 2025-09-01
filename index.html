@@ -21,10 +21,6 @@
                 <span class="brand-text">Shubham Raj</span>
             </div>
             <div class="nav-links">
-                <a href="#hero">Home</a>
-                <a href="#bio">Bio</a>
-                <a href="#apps">Apps</a>
-                <a href="#contact">Contact</a>
             </div>
         </div>
     </nav>
@@ -52,17 +48,6 @@
                 <div class="bio-content">
                     <p>As a passionate software engineer, I thrive on transforming complex challenges into elegant, user-centric applications. My journey is driven by a relentless curiosity and a commitment to crafting solutions that genuinely improve lives.</p>
                     <p>I believe the best technology is invisible, seamlessly integrating into daily routines to solve problems so intuitively that users forget they're interacting with software at all. This philosophy guides my approach to development, focusing on clean code, intuitive design, and impactful results.</p>
-                    <div class="skills-constellation">
-                        <h3>Skills Constellation</h3>
-                        <ul>
-                            <li>iOS Development</li>
-                            <li>AI Integration</li>
-                            <li>UI/UX Design</li>
-                            <li>API Development</li>
-                            <li>Problem Solving</li>
-                            <li>Clean Code Architecture</li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </section>
@@ -131,5 +116,28 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Fix smooth scrolling for navigation buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('a[href^="#"]');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        // Add a small delay to ensure the click is processed
+                        setTimeout(() => {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }, 10);
+                    }
+                }, true); // Use capture phase
+            });
+        });
+    </script>
 </body>
 </html>
