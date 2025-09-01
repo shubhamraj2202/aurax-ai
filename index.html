@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shubham Raj - Software Engineer</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
 </head>
 <body>
     <div class="cosmic-background">
@@ -19,156 +21,80 @@
                 <span class="brand-text">Shubham Raj</span>
             </div>
             <div class="nav-links">
+                <a href="#hero">Home</a>
+                <a href="#bio">Bio</a>
                 <a href="#apps">Apps</a>
-                <a href="#about">About</a>
                 <a href="#contact">Contact</a>
             </div>
         </div>
     </nav>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">
-                        Software Engineer
-                    </h1>
-                    <p class="hero-subtitle">
-                        Building solutions for everyday problems. 
-                        I turn real-world challenges into simple, powerful apps that make life easier.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#apps" class="btn btn-primary">
-                            <span>View My Apps</span>
-                            <div class="btn-glow"></div>
-                        </a>
-                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        <!-- Hero Section (FEConf-inspired) -->
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <h1 class="hero-title-main">
+                    <span class="hero-name-line">Shubham Raj</span>
+                    <span class="hero-role-line">Software Engineer</span>
+                </h1>
+                <p class="hero-tagline">Building solutions for everyday problems.</p>
+                <div class="hero-call-to-action">
+                    <a href="#apps" class="btn btn-primary">View My Apps</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bio Section -->
+        <section id="bio" class="bio-section">
+            <div class="container">
+                <h2 class="section-title">My Journey & Philosophy</h2>
+                <div class="bio-content">
+                    <p>As a passionate software engineer, I thrive on transforming complex challenges into elegant, user-centric applications. My journey is driven by a relentless curiosity and a commitment to crafting solutions that genuinely improve lives.</p>
+                    <p>I believe the best technology is invisible, seamlessly integrating into daily routines to solve problems so intuitively that users forget they're interacting with software at all. This philosophy guides my approach to development, focusing on clean code, intuitive design, and impactful results.</p>
+                    <div class="skills-constellation">
+                        <h3>Skills Constellation</h3>
+                        <ul>
+                            <li>iOS Development</li>
+                            <li>AI Integration</li>
+                            <li>UI/UX Design</li>
+                            <li>API Development</li>
+                            <li>Problem Solving</li>
+                            <li>Clean Code Architecture</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Apps Section -->
-        <section id="apps" class="apps">
+        <!-- Orbital App Navigation Hub -->
+        <section id="apps" class="apps-orbital-hub">
             <div class="container">
-                <h2 class="section-title">Apps That Solve Real Problems</h2>
-                
-                <div class="apps-grid">
-                    <!-- VeggieLens -->
-                    <div class="app-card featured">
-                        <div class="app-header">
-                            <div class="app-icon-container">
-                                <div class="app-icon">🌱</div>
-                            </div>
-                            <div class="app-title-section">
-                                <h3>VeggieLens</h3>
-                                <p class="app-tagline">AI Food Scanner</p>
-                            </div>
-                        </div>
-                        
-                        <div class="problem-solution">
-                            <div class="problem">
-                                <div class="problem-icon">🤔</div>
-                                <div>
-                                    <h4>The Problem</h4>
-                                    <p>"Is this food vegan?" - A daily question millions struggle with</p>
-                                </div>
-                            </div>
-                            
-                            <div class="solution-arrow">→</div>
-                            
-                            <div class="solution">
-                                <div class="solution-icon">✨</div>
-                                <div>
-                                    <h4>My Solution</h4>
-                                    <p>AI-powered instant food analysis. Point, scan, know.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="app-results">
-                            <div class="impact-grid">
-                                <div class="impact-item">
-                                    <span class="impact-number" id="users-helped">10K+</span>
-                                    <span class="impact-label">Users Helped</span>
-                                </div>
-                                <div class="impact-item">
-                                    <span class="impact-number" id="app-rating">4.8★</span>
-                                    <span class="impact-label">App Store Rating</span>
-                                </div>
-                                <div class="impact-item">
-                                    <span class="impact-number" id="scans-processed">50K+</span>
-                                    <span class="impact-label">Scans Processed</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="app-actions">
-                            <a href="#" class="app-store-btn">
-                                <div class="app-store-icon">📱</div>
-                                <span>Download on App Store</span>
-                            </a>
-                            <div class="app-links">
-                                <a href="veggieLens-support.html">Support</a>
-                                <a href="veggieLens-terms.html">Terms</a>
-                                <a href="veggieLens-privacy.html">Privacy</a>
-                            </div>
-                        </div>
+                <h2 class="section-title">My Universe of Apps</h2>
+                <div class="orbital-grid">
+                    <!-- VeggieLens App Planet -->
+                    <a href="veggieLens.html" class="app-planet" data-app-id="veggielens">
+                        <div class="planet-core">🌱</div>
+                        <h3 class="planet-name">VeggieLens</h3>
+                        <p class="planet-tagline">AI Food Scanner</p>
+                    </a>
+                    
+                    <!-- Future App Planet Placeholder -->
+                    <div class="app-planet placeholder">
+                        <div class="planet-core">✨</div>
+                        <h3 class="planet-name">What's Next?</h3>
+                        <p class="planet-tagline">Always exploring new frontiers</p>
                     </div>
-
-                    <!-- Next App -->
-                    <div class="app-card next-app">
-                        <div class="next-app-content">
-                            <div class="next-app-icon">🚀</div>
-                            <h3>What's Next?</h3>
-                            <p>Always researching the next everyday problem to solve. 
-                               If you've identified a challenge that affects many people, let's talk about it.</p>
-                            <a href="#contact" class="next-app-btn">Share a Problem</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="about">
-            <div class="container">
-                <h2 class="section-title">My Approach</h2>
-                <div class="approach-grid">
-                    <div class="approach-step">
-                        <div class="step-number">1</div>
-                        <h3>Listen</h3>
-                        <p>Identify real pain points people face daily</p>
-                    </div>
-                    <div class="approach-step">
-                        <div class="step-number">2</div>
-                        <h3>Build</h3>
-                        <p>Create simple, elegant solutions</p>
-                    </div>
-                    <div class="approach-step">
-                        <div class="step-number">3</div>
-                        <h3>Iterate</h3>
-                        <p>Improve based on user feedback</p>
-                    </div>
-                </div>
-                
-                <div class="philosophy">
-                    <blockquote>
-                        "The best apps are invisible - they solve problems so elegantly 
-                        that users forget they're using technology at all."
-                    </blockquote>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="contact">
+        <section id="contact" class="contact-section">
             <div class="container">
-                <h2 class="section-title">Got a Problem to Solve?</h2>
+                <h2 class="section-title">Connect Across the Cosmos</h2>
                 <p class="contact-subtitle">
-                    I'm always looking for new challenges. If you've identified a real problem 
-                    that could be solved with an app, let's discuss it.
+                    I'm always open to new challenges and collaborations. Let's build something impactful together.
                 </p>
                 <div class="contact-grid">
                     <a href="mailto:shubhamraj2202@gmail.com" class="contact-card">
@@ -182,7 +108,7 @@
                         <div class="contact-icon">💻</div>
                         <div class="contact-info">
                             <h3>GitHub</h3>
-                            <p>View my code</p>
+                            <p>View My Codebase</p>
                         </div>
                     </a>
                 </div>
@@ -205,38 +131,5 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            fetchAppStoreData();
-        });
-
-        async function fetchAppStoreData() {
-            const appId = '6747918779'; // VeggieLens App ID
-            const countryCode = 'jp'; // Japan App Store
-
-            try {
-                const response = await fetch(`https://itunes.apple.com/lookup?id=${appId}&country=${countryCode}`);
-                const data = await response.json();
-
-                if (data.results && data.results.length > 0) {
-                    const app = data.results[0];
-                    document.getElementById('app-rating').textContent = app.averageUserRating.toFixed(1) + '★';
-                    document.getElementById('users-helped').textContent = formatNumber(app.userRatingCount) + '+';
-                }
-            } catch (error) {
-                console.error('Error fetching App Store data:', error);
-            }
-        }
-
-        function formatNumber(num) {
-            if (num >= 1000000) {
-                return (num / 1000000).toFixed(1) + 'M';
-            }
-            if (num >= 1000) {
-                return (num / 1000).toFixed(0) + 'K';
-            }
-            return num;
-        }
-    </script>
 </body>
 </html>
